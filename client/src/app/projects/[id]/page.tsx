@@ -1,6 +1,16 @@
 import ProjectContent from './ProjectContent';
 
-// This is a server component (no "use client" directive)
-export default function ProjectPage({ params }: { params: { id: string } }) {
+// Define types based on Next.js documentation for dynamic route segment pages
+type Props = {
+  params: {
+    id: string;
+  };
+  searchParams: {
+    [key: string]: string | string[] | undefined;
+  };
+};
+
+// The Next.js App Router page component
+export default function Page({ params }: Props) {
   return <ProjectContent id={params.id} />;
-}
+} 
