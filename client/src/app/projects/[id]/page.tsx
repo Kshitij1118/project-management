@@ -8,8 +8,10 @@ import Timeline from "../TimelineView";
 import Table from "../TableView";
 import ModalNewTask from "@/components/ModalNewTask";
 
+// Changed the Props type to match Next.js PageProps constraint
 type Props = {
   params: { id: string };
+  searchParams?: Record<string, string | string[] | undefined>;
 };
 
 const Project = ({ params }: Props) => {
