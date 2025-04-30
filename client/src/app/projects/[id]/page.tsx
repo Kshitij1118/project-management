@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from "react";
 import ProjectHeader from "@/app/projects/ProjectHeader";
 import Board from "../BoardView";
