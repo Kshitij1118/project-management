@@ -26,12 +26,14 @@ import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 /* REDUX PERSISTENCE */
 const createNoopStorage = () => {
   return {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     getItem(_key: any) {
       return Promise.resolve(null);
     },
     setItem(_key: any, value: any) {
       return Promise.resolve(value);
     },
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     removeItem(_key: any) {
       return Promise.resolve();
     },
@@ -80,7 +82,7 @@ export default function StoreProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const storeRef = useRef<AppStore>();
+  const storeRef = useRef<AppStore | null>(null);
   if (!storeRef.current) {
     storeRef.current = makeStore();
     setupListeners(storeRef.current.dispatch);
