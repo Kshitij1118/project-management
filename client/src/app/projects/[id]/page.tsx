@@ -8,12 +8,11 @@ import Timeline from "../TimelineView";
 import Table from "../TableView";
 import ModalNewTask from "@/components/ModalNewTask";
 
-interface PageProps {
+type Props = {
   params: { id: string };
-  searchParams: Record<string, string | string[] | undefined>;
-}
+};
 
-export default function Project({ params }: PageProps) {
+const Project = ({ params }: Props) => {
   const { id } = params;
   const [activeTab, setActiveTab] = useState("Board");
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
@@ -40,4 +39,6 @@ export default function Project({ params }: PageProps) {
       )}
     </div>
   );
-}
+};
+
+export default Project;
