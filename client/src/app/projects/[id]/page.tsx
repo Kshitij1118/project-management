@@ -9,10 +9,13 @@ import Table from "../TableView";
 import ModalNewTask from "@/components/ModalNewTask";
 
 type Props = {
-  params: { id: string };
+  params: {
+    id: string;
+  };
 };
 
-const Project = ({ params }: Props) => {
+// Next.js page component
+export default function Project({ params }: Props) {
   const { id } = params;
   const [activeTab, setActiveTab] = useState("Board");
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
@@ -39,6 +42,4 @@ const Project = ({ params }: Props) => {
       )}
     </div>
   );
-};
-
-export default Project;
+}
