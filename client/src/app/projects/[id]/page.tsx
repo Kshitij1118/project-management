@@ -8,7 +8,12 @@ import Timeline from "../TimelineView";
 import Table from "../TableView";
 import ModalNewTask from "@/components/ModalNewTask";
 
-export default function Project({ params }: { params: { id: string } }) {
+// Next.js will pass params as a plain object if your component is NOT async
+type Props = {
+  params: { id: string };
+};
+
+const Project = ({ params }: Props) => {
   const { id } = params;
   const [activeTab, setActiveTab] = useState("Board");
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
@@ -35,4 +40,6 @@ export default function Project({ params }: { params: { id: string } }) {
       )}
     </div>
   );
-}
+};
+
+export default Project;
