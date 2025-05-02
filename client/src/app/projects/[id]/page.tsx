@@ -8,14 +8,12 @@ import Timeline from "../TimelineView";
 import Table from "../TableView";
 import ModalNewTask from "@/components/ModalNewTask";
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
+interface PageProps {
+  params: { id: string };
+  searchParams: Record<string, string | string[] | undefined>;
+}
 
-// Next.js page component
-export default function Project({ params }: Props) {
+export default function Project({ params }: PageProps) {
   const { id } = params;
   const [activeTab, setActiveTab] = useState("Board");
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
