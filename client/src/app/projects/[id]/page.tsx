@@ -8,13 +8,13 @@ import Timeline from "../TimelineView";
 import Table from "../TableView";
 import ModalNewTask from "@/components/ModalNewTask";
 
-// Next.js will pass params as a plain object if your component is NOT async
+// Notice the params type is a Promise here!
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
-const Project = ({ params }: Props) => {
-  const { id } = params;
+const Project = async ({ params }: Props) => {
+  const { id } = await params;
   const [activeTab, setActiveTab] = useState("Board");
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
 
